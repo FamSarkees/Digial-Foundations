@@ -1,0 +1,34 @@
+// XNOR Gate by Universal Gates
+
+//NAND Gate
+
+module XNOR_Gate (
+    input wire A, B,
+    output wire Q
+);
+
+wire t1, t2, t3;
+
+assign t1 = ~(A & B);       
+assign t2 = ~(A & t1);    
+assign t3 = ~(B & t1);      
+assign Q  = ~(t2 & t3);   
+
+endmodule
+
+
+//NOR Gate
+module XNOR_Gate (
+    input wire A, B,
+    output wire Q
+);
+
+wire nota, notb, t1, t2;
+
+assign nota = ~(A | A);  
+assign notb = ~(B | B);   
+assign t1   = ~(nota | notb);  
+assign t2   = ~(A | B);   
+assign Q    = ~(t1 | t2); 
+
+endmodule
