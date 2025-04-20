@@ -1,0 +1,15 @@
+//OR Gate By MUXs
+
+//MUX 2:1 
+module OR_Gate(
+input wire a,b,
+output reg q
+);
+
+always @(*)begin
+case(b)
+1'b0: q=a;
+1'b1: q=1'b1;
+endcase
+end 
+endmodule
