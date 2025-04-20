@@ -1,0 +1,32 @@
+// XOR Gate by Universal Gates
+
+//NAND Gate
+
+module XOR_Gate (
+    input wire A, B,
+    output wire Q
+);
+
+wire t1, t2, t3;
+
+assign t1 = ~(A & B);      
+assign t2 = ~(A & t1);       
+assign t3 = ~(B & t1);        
+assign Q  = ~(t2 & t3);    
+endmodule
+
+//NOR Gate
+module XOR_Gate (
+    input wire A, B,
+    output wire Q
+);
+
+wire nota, notb, t1;
+
+assign nota = ~(A | A);       
+assign notb = ~(B | B);     
+assign t1   = ~(A | B);    
+assign Q    = ~(~(nota | notb) | t1); 
+
+endmodule
+
