@@ -1,0 +1,29 @@
+//OR Gate By Universal Gates
+
+//NAND
+module OR_Gate (
+    input wire A, B,
+    output wire Q
+);
+
+wire NOT_A, NOT_B;
+
+assign NOT_A = ~(A & A);  
+assign NOT_B = ~(B & B);
+assign Q = ~(NOT_A & NOT_B); 
+
+endmodule
+
+//NOR 
+module OR_Gate (
+    input wire A, B,
+    output wire Q
+);
+
+wire NOT_A, NOT_B;
+
+assign NOT_A = ~(A | A); 
+assign NOT_B = ~(B | B);  
+assign Q = ~(NOT_A | NOT_B); 
+
+endmodule
