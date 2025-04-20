@@ -1,0 +1,17 @@
+//AND Gate By MUXs
+//MUX 4:1 
+
+module AND_Gate(
+input wire A,B,
+output reg q
+);
+
+always @(*)begin
+case({B,A})
+2'b00: q=1'b0;
+2'b01: q=1'b0;
+2'b10: q=1'b0;
+2'b11: q=1'b1;
+endcase
+end  
+endmodule

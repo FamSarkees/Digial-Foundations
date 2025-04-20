@@ -1,0 +1,29 @@
+//AND Gate By Universal Gates
+
+// NAND
+module AND_Gate(
+input wire A,B,
+output reg q
+);
+
+wire NAND_OUT;
+
+assign NAND_OUT = ~(A&B);
+assign q = ~ (NAND_OUT & NAND_OUT);
+
+endmodule
+
+//NOR 
+module AND_Gate(
+input wire A,B,
+output reg q
+);
+
+wire NOR_OUT1;
+wire NOR_OUT2;
+
+assign NOR_OUT1 = ~(A | A);
+assign NOR_OUT2 = ~(B | B);
+assign q = ~ (NOR_OUT1 | NOR_OUT2);
+
+endmodule
